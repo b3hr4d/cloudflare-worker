@@ -1,0 +1,8 @@
+name = "note"
+main = "src/index.ts"
+compatibility_date = "2023-09-05"
+usage_model = "bundled"
+env = { }
+
+[triggers]
+crons = [ ]
