@@ -2,7 +2,12 @@ name = "note"
 main = "src/index.ts"
 compatibility_date = "2023-09-05"
 usage_model = "bundled"
-env = { }
+env = {}
+
+# Your last deployment was from Wrangler. Changes to these bindings should also be updated in your wrangler.toml file.
+kv_namespaces = [
+    { binding = "IDEMPOTENCY_STORE", id = "5d6b553a3ed942688fe3629b082b75f8" },
+]
 
 [triggers]
-crons = [ ]
+crons = []
