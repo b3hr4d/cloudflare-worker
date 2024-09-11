@@ -32,7 +32,7 @@ export default {
     }
 
     const requestBody = await request.text();
-    let { to, subject, html } = JSON.parse(requestBody);
+    let { to, from, subject, html } = JSON.parse(requestBody);
 
     // Generate a deterministic UUID based on the idempotency key and request body
     const deterministicId = uuidv5(idempotencyKey + requestBody, env.UUID_NAMESPACE);
@@ -53,7 +53,7 @@ export default {
             'Authorization': `Bearer ${env.RESEND_API_KEY}`,
           },
           body: JSON.stringify({
-            from: 'Info <info@b3pay.net>',
+            from: from || 'Info <info@b3pay.net>',
             to,
             subject,
             html,
